@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.plaf.basic.BasicCheckBoxMenuItemUI;
+
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -19,7 +21,7 @@ public class Program {
 		List<ChessPiece> captured = new ArrayList<>();
 		
 		
-		while (true) {
+		while (!chessMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.printMatch(chessMatch, captured);
@@ -49,5 +51,8 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
+		
 	}
 }
