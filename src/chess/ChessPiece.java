@@ -39,5 +39,8 @@ public abstract class ChessPiece extends Piece {
 		return p != null && p.getColor() != color;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "P";
+	}
 }
